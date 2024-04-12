@@ -81,16 +81,15 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    implementation("androidx.compose.material3:material3-window-sizeclass") //Agregado
+    implementation("androidx.compose.material3:material3-window-size-class") //Agregado
     val appcompat_version = "1.6.1"
-    implementation("androidx.appcompat:appcompat:$appcompat_version")
-//Agregado recien
-//agregado Navigation
+    implementation("androidx.appcompat:appcompat:$appcompat_version")//Agregado recien
+    //agregado Navigation
     val navCompose = "2.7.7" //old 2.7.0-beta01
     implementation("androidx.navigation:navigation-compose:$navCompose")
     implementation ("com.google.accompanist:accompanist-insets:0.31.4-beta")//Agregado //0.17.0
-            implementation ("com.google.accompanist:accompanistsystemuicontroller:0.31.4-beta") //0.16.0
-            implementation ("com.google.accompanist:accompanist-navigationanimation:0.31.4-beta") //0.16.0
+    implementation ("com.google.accompanist:accompanist-systemuicontroller:0.31.4-beta") //0.16.0
+    implementation ("com.google.accompanist:accompanist-navigation-animation:0.31.4-beta") //0.16.0
 //Agregados
             implementation ("com.google.dagger:hilt-android:2.47")
             kapt ("com.google.dagger:hilt-compiler:2.47")
@@ -106,7 +105,7 @@ dependencies {
             implementation ("androidx.compose.runtime:runtime-livedata")
 //Para trabajar con contraint layout
             implementation ("androidx.constraintlayout:constraintlayout:2.2.0-alpha10")
-            implementation ("androidx.constraintlayout:constraintlayoutcompose:1.1.0-alpha10")
+            implementation ("androidx.constraintlayout:constraintlayout-compose:1.1.0-alpha10")
 //Para trabajar con camara
         val camerax_version = "1.2.3" //1.2.3
     implementation ("androidx.camera:camera-core:${camerax_version}")
@@ -117,9 +116,9 @@ dependencies {
 //Barcode
     implementation ("com.google.mlkit:barcode-scanning:17.1.0")
 //Location
-    implementation ("com.google.android.gms:play-serviceslocation:21.0.1")
+    implementation ("com.google.android.gms:play-services-location:21.0.1")
 //Manager permissions
-    implementation ("com.google.accompanist:accompanistpermissions:0.30.1")
+    implementation ("com.google.accompanist:accompanist-permissions:0.30.1")
 //Moshi
     implementation ("com.squareup.moshi:moshi-kotlin:1.14.0")
     kapt ("com.squareup.moshi:moshi-kotlin-codegen:1.14.0")
@@ -131,7 +130,7 @@ dependencies {
     annotationProcessor ("androidx.room:room-compiler:$room_version")
 // To use Kotlin annotation processing tool (kapt)
     kapt ("androidx.room:room-compiler:$room_version")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutinesandroid:1.3.9")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
 // optional - Kotlin Extensions and Coroutines support for Room
     implementation("androidx.room:room-ktx:$room_version")
 // Retrofit
