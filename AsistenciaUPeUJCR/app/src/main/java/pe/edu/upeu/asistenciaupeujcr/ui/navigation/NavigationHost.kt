@@ -24,7 +24,7 @@ fun NavigationHost(
 ) {
 
     NavHost(
-        navController = navController, startDestination = Destinations.Login.route
+        navController = navController, startDestination = Destinations.Pantalla1.route
     ) {
 
         composable(Destinations.Pantalla1.route) {
