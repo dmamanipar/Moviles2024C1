@@ -17,5 +17,8 @@ class MyApplication : Application(){
             AppCompatDelegate.MODE_NIGHT_NO
         }
         AppCompatDelegate.setDefaultNightMode(mode)
+
+
+
     }
 }
