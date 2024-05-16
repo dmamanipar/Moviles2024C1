@@ -23,6 +23,7 @@ class CalcButton extends StatelessWidget {
         height: 70,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
+
           ).copyWith(elevation: ButtonStyleButton.allOrNull(0.0)),
           onPressed: () {
             callback!(text);
@@ -31,6 +32,24 @@ class CalcButton extends StatelessWidget {
             text!,
             style: TextStyle(fontSize: 20),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class ObscuredTextFieldSample extends StatelessWidget {
+  const ObscuredTextFieldSample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const SizedBox(
+      width: 250,
+      child: TextField(
+        obscureText: true,
+        decoration: InputDecoration(
+          border: OutlineInputBorder(),
+          labelText: 'Password',
         ),
       ),
     );

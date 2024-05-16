@@ -1,3 +1,4 @@
+import 'package:calc_upeu/comp/CustomAppBarX.dart';
 import 'package:flutter/material.dart';
 
 import 'package:calc_upeu/comp/CustomAppBar.dart';
@@ -38,6 +39,9 @@ class CalcAppState extends State<CalcApp> {
       print("");
     });
   }
+
+
+
 //Aquí Código
   void resultOperacion(String text) {
     setState(() {
@@ -66,6 +70,58 @@ class CalcAppState extends State<CalcApp> {
     });
   }
 
+  //
+
+
+  final RestorableDateTime _selectedDate =
+  RestorableDateTime(DateTime(2021, 7, 25));
+  late final RestorableRouteFuture<DateTime?> _restorableDatePickerRouteFuture =
+  RestorableRouteFuture<DateTime?>(
+    onComplete: _selectDate,
+    onPresent: (NavigatorState navigator, Object? arguments) {
+      return navigator.restorablePush(
+        _datePickerRoute,
+        arguments: _selectedDate.value.millisecondsSinceEpoch,
+      );
+    },
+  );
+
+  @pragma('vm:entry-point')
+  static Route<DateTime> _datePickerRoute(
+      BuildContext context,
+      Object? arguments,
+      ) {
+    return DialogRoute<DateTime>(
+      context: context,
+      builder: (BuildContext context) {
+        return DatePickerDialog(
+          restorationId: 'date_picker_dialog',
+          initialEntryMode: DatePickerEntryMode.calendarOnly,
+          initialDate: DateTime.fromMillisecondsSinceEpoch(arguments! as int),
+          firstDate: DateTime(2021),
+          lastDate: DateTime(2022),
+        );
+      },
+    );
+  }
+
+
+
+  void _selectDate(DateTime? newSelectedDate) {
+    if (newSelectedDate != null) {
+      setState(() {
+        _selectedDate.value = newSelectedDate;
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(
+              'Selected: ${_selectedDate.value.day}/${_selectedDate.value.month}/${_selectedDate.value.year}'),
+        ));
+      });
+    }
+  }
+
+  //
+
+
   @override
   Widget build(BuildContext context) {
 //Aqui codigo
@@ -78,12 +134,14 @@ class CalcAppState extends State<CalcApp> {
 
     AppTheme.colorX=Colors.blue;
     return MaterialApp(
+      restorationScopeId: 'app',
       debugShowCheckedModeBanner: false,
       title: 'Calculator',
       themeMode: AppTheme.useLightMode ? ThemeMode.light : ThemeMode.dark,
-      theme: AppTheme.themeData,
+      theme: AppTheme.themeDataLight,//Fin Agregado
+      darkTheme: AppTheme.themeDataDark,
       home: Scaffold(
-        appBar: CustomAppBar(accionx: accion as Function),
+        appBar: CustomAppBarX(accionx: accion as Function),
         body: SingleChildScrollView(
           padding: EdgeInsets.all(20),
           child: Column(
@@ -114,7 +172,8 @@ Theme.of(context).colorScheme.surfaceVariant,*/
                       ),
                     ],
                   )
-              )
+              ),
+
             ],
           ),
         ),
@@ -123,3 +182,4 @@ Theme.of(context).colorScheme.surfaceVariant,*/
   }
 
 }
+
