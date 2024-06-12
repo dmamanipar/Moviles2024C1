@@ -56,6 +56,9 @@ class _MyAppState extends State<MyAppQR> {
     mp.longituda=currentPosition!.longitude.toString();
     mp.tipo="Est.";
     mp.tipoCui="DNI";
+    mp.entsal="G";
+    mp.subactasisId=1;
+    mp.offlinex="NO";
 
     print("A:${mp.actividadId}, ID:${mp.id}, F:${mp.fecha}, "
         "H:${mp.horaReg} C:${mp.calificacion} CUI:${mp.cui} "

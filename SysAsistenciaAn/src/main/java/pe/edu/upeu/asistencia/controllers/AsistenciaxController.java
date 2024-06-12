@@ -6,6 +6,9 @@ package pe.edu.upeu.asistencia.controllers;
 
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pe.edu.upeu.asistencia.dtos.AsistenciaxDto;
 import pe.edu.upeu.asistencia.models.Asistenciax;
 import pe.edu.upeu.asistencia.services.AsistenciaxService;
+import pe.edu.upeu.asistencia.utils.ErrorLogger;
 
 /**
  *
@@ -30,6 +34,10 @@ public class AsistenciaxController {
     @Autowired
     private AsistenciaxService asistenciaxService;   
     
+    ErrorLogger logg=new ErrorLogger("AsistenciaxController");
+    
+    Logger logger = LoggerFactory.getLogger(AsistenciaxController.class);
+    
     @GetMapping(value = "/list")
     public ResponseEntity<List<Asistenciax>> listMaterialesx() {
         List<Asistenciax> actDto = asistenciaxService.findAll();
@@ -38,8 +46,11 @@ public class AsistenciaxController {
     }  
     
     @PostMapping("/crear")
-    public ResponseEntity<Asistenciax> createMaterialesx(@RequestBody AsistenciaxDto.AsistenciaxCrearDto entidadx) {        
+    public ResponseEntity<Asistenciax> createMaterialesx(@RequestBody AsistenciaxDto.AsistenciaxCrearDto entidadx) {   
+        
+        logger.info("VER:"+entidadx);
         Asistenciax data = asistenciaxService.save(entidadx);
+        
         return ResponseEntity.ok(data);
     }    
     
