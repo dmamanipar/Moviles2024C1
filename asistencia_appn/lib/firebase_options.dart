@@ -27,10 +27,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -44,38 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAHoeOkCNW4W5b9HR17ux806j8aDn_geUg',
-    appId: '1:625836636601:web:7b16c1516a26005a141e68',
-    messagingSenderId: '625836636601',
-    projectId: 'loginappmovil-7f038',
-    authDomain: 'loginappmovil-7f038.firebaseapp.com',
-    storageBucket: 'loginappmovil-7f038.appspot.com',
-    measurementId: 'G-5VCLD1R703',
+    apiKey: 'AIzaSyBFSeFsrRsYURmX5hZWmMJwG2D7O73sz-o',
+    appId: '1:525890137745:web:18807998cba7259afc5930',
+    messagingSenderId: '525890137745',
+    projectId: 'appmovil-f68d8',
+    authDomain: 'appmovil-f68d8.firebaseapp.com',
+    storageBucket: 'appmovil-f68d8.appspot.com',
+    measurementId: 'G-63YMK02V7D',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDPkVQdPPCQ_JfXnNCz5cjvTvYI3e32kN4',
-    appId: '1:625836636601:android:999f69b424ea1925141e68',
-    messagingSenderId: '625836636601',
-    projectId: 'loginappmovil-7f038',
-    storageBucket: 'loginappmovil-7f038.appspot.com',
+    apiKey: 'AIzaSyC7dXCXiAMABJLwXSGyUjHTjn5QV-8cCdI',
+    appId: '1:525890137745:android:1b1deb4bb3b8bf92fc5930',
+    messagingSenderId: '525890137745',
+    projectId: 'appmovil-f68d8',
+    storageBucket: 'appmovil-f68d8.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD4W2hzQWbYKPqgy44Afx9HFjkSItPBwN4',
-    appId: '1:625836636601:ios:3280ea8dab6984a7141e68',
-    messagingSenderId: '625836636601',
-    projectId: 'loginappmovil-7f038',
-    storageBucket: 'loginappmovil-7f038.appspot.com',
-    iosBundleId: 'pe.edu.upeu.asistenciaApp',
+    apiKey: 'AIzaSyBDtL7ZsVz8AkTVZoRKee4y6KO6bTorgYw',
+    appId: '1:525890137745:ios:132e2a5f99ef5bd7fc5930',
+    messagingSenderId: '525890137745',
+    projectId: 'appmovil-f68d8',
+    storageBucket: 'appmovil-f68d8.appspot.com',
+    iosBundleId: 'pe.edu.upeu.asistenciaAppn',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyD4W2hzQWbYKPqgy44Afx9HFjkSItPBwN4',
-    appId: '1:625836636601:ios:45d6ad2c6e2c9fc8141e68',
-    messagingSenderId: '625836636601',
-    projectId: 'loginappmovil-7f038',
-    storageBucket: 'loginappmovil-7f038.appspot.com',
-    iosBundleId: 'pe.edu.upeu.asistenciaApp.RunnerTests',
+    apiKey: 'AIzaSyBDtL7ZsVz8AkTVZoRKee4y6KO6bTorgYw',
+    appId: '1:525890137745:ios:132e2a5f99ef5bd7fc5930',
+    messagingSenderId: '525890137745',
+    projectId: 'appmovil-f68d8',
+    storageBucket: 'appmovil-f68d8.appspot.com',
+    iosBundleId: 'pe.edu.upeu.asistenciaAppn',
   );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyBFSeFsrRsYURmX5hZWmMJwG2D7O73sz-o',
+    appId: '1:525890137745:web:f4647a641846a78ffc5930',
+    messagingSenderId: '525890137745',
+    projectId: 'appmovil-f68d8',
+    authDomain: 'appmovil-f68d8.firebaseapp.com',
+    storageBucket: 'appmovil-f68d8.appspot.com',
+    measurementId: 'G-TTB8TQTZG6',
+  );
+
 }

@@ -13,7 +13,7 @@ class _MaterialesxApi implements MaterialesxApi {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'http://192.168.1.139:8090';
+    baseUrl ??= 'http://172.22.2.50:8090';
   }
 
   final Dio _dio;

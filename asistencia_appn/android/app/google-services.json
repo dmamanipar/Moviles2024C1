@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "525890137745",
+    "project_id": "appmovil-f68d8",
+    "storage_bucket": "appmovil-f68d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525890137745:android:1b1deb4bb3b8bf92fc5930",
+        "android_client_info": {
+          "package_name": "pe.edu.upeu.asistencia_appn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7dXCXiAMABJLwXSGyUjHTjn5QV-8cCdI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
